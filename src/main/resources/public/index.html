@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Client Test</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+        <form data-bid-session-id="102">
+            <fieldset>
+                <legend>Join Bid</legend>
+                <label for="dealerId">Your Dealer ID</label>
+                <input type="text" name="dealerId" id="dealerId" value="1">
+
+                <label for="bidSessionId">Bid Session ID</label>
+                <input type="text" name="bidSessionId" id="bidSessionId" value="102" disabled="disabled">
+
+                <input type="button" id="connect-wss" value="Connect">
+            </fieldset>
+
+            <div id="bid-info">
+                <p>Bidding for vehicle with VIN: <span id="vehicle-vin"></span></p>
+                <p>Starting price: <span id="bid-starting-price"></span></p>
+                <p>Started: <span id="bid-start-date"></span></p>
+                <p>End: <span id="bid-end-date"></span></p>
+            </div>
+            <p id="current-user-in-lead" style="display: none">You are now in the lead with <span class="highest-bid"></span></p>
+            <p id="current-user-not-in-lead" style="display: none"><span id="leading-dealer"></span> is now in the lead with <span class="highest-bid"></span></p>
+
+            <div>
+                <p>Current bidders:</p>
+                <ul id="current-bidders"></ul>
+            </div>
+
+            <input id="bid" type="submit" value="Bid" disabled="disabled">
+        </form>
+
+        <div id="bid-results" style="display: none">
+            <p id="user-winner">Congratulations! The vehicle sold to you at <span class="winning-price"></span>!</p>
+            <p id="user-not-winner">Vehicle sold to <span id="winning-dealer"></span> at <span class="winning-price"></span>.</p>
+            <p id="stats">Thanks for participating! <span id="total-dealer-participated"></span> dealers participated, <span id="total-bids"></span> bids placed! Bidding rate was <span id="bids-per-second"></span>/s.</p>
+        </div>
+    </body>
+</html>

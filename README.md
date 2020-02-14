@@ -1,4 +1,4 @@
-# Carsome Technical Challenge
+# Cxxsxxx Technical Challenge
 
 ## About the Application
 This is a Spring Boot application. To see it in action, the easiest way is to build it. You need [Maven](https://maven.apache.org/) and Java installed.

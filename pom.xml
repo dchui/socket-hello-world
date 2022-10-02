@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<scala.library.version>2.13.1</scala.library.version>
+		<scala.library.version>2.13.9</scala.library.version>
 	</properties>
 
 	<dependencies>
